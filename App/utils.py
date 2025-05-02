@@ -156,6 +156,9 @@ class ContentBasedRecommender:
         return self.df_clean.iloc[similar_idxs]['isbn'].tolist()
 
     def save(self, path_prefix):
+        columns_to_keep = ['isbn', 'title_clean', 'author_clean', 'desc_clean', 'genres_clean', 'combined_features']
+        self.df_clean = self.df_clean[columns_to_keep]
+        
         # Save vectorizer, model, similarity_dict, and tfidf_matrix to files
         with open(f'{path_prefix}_vectorizer.pkl', 'wb') as f:
             pickle.dump(self.vectorizer, f)
