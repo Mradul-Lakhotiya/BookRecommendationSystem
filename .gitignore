@@ -1,0 +1,11 @@
+# *.pkl
+Data/
+*.csv
+./Version1/Data/
+App/__pycache__/
+*.pyc
+.DS_Store
+.env
+.vscode/
+*.ipynb_checkpoints
+App/model_assets/content_model/book_recommender_df_clean.csv
